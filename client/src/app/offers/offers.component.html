@@ -1,0 +1,55 @@
+
+<!-- <div class="container"> -->
+
+<!--  <div ng-app = "myApp" ng-controller="myCtrl">
+        <form (submit)="fetchOffer()">Enter Client ID here:
+            <input type="text" ng-model="text" name="text" />
+            <input type="submit" id="submit" value="Submit" />
+
+        </form>
+        <button ng-click="myFunction">Click Me</button>
+        <p> {{offer}}</p>
+
+
+<hr>
+<p> Here are the Offers</p>
+    <div *ngFor ="let offer of offers">
+      <div class ="col-mod-3">
+          {{offer.offer_name}}
+      </div>
+    <br>
+      <div class ="col-mod-3">
+          {{offer.offer_type}}
+      </div>
+
+    </div>
+</div>-->
+
+<html>
+
+<script type="text/javascript" src="app.js"></script>
+<script>
+var app = angular.module('exampleApp', []);
+
+app.controller('appCtrl', function($scope){
+    $scope.name = "",
+    $scope.clicked = false,
+    $scope.click = function click(){
+            $scope.clicked = !$scope.clicked;
+    }
+});
+</script>
+<body ng-app="exampleApp" ng-controller="appCtrl">
+    <div>
+        <h3>Enter Customer name</h3>
+        <br>
+        <input type="text" class="form-control" placeholder="Type Customer name" ng-model="name">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" ng-click="click()">Submit</button>
+        <br>
+        <h3 ng-show="clicked">Cutomer Offers-{{name}}</h3>
+    </div>
+
+</body>
+</html>
